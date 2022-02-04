@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>作品資料.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%E6%B2%B3%E5%8E%9F%E9%9B%BB%E5%AD%90%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E5%B0%82%E9%96%80%E5%AD%A6%E6%A0%A1">河原電子ビジネス専門学校</h1>
+<h1 id="%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%AF%E3%83%AA%E3%82%A8%E3%82%A4%E3%82%BF%E3%83%BC%E7%A7%91-%EF%BC%92%E5%B9%B4-%E8%8A%9D-%E9%9A%86%E5%BF%97">ゲームクリエイター科　２年　芝　隆志</h1>
+<h2 id="%E7%9B%AE%E6%AC%A1">目次</h2>
+<ol>
+<li>
+<h4 id="%E6%A6%82%E8%A6%81"><a href="#overview">概要</a></h4>
+</li>
+<li>
+<h4 id="%E6%93%8D%E4%BD%9C%E8%AA%AC%E6%98%8E"><a href="#operation">操作説明</a></h4>
+</li>
+<li>
+<h4 id="%E6%8B%85%E5%BD%93%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89"><a href="#sorceCode">担当ソースコード</a></h4>
+</li>
+<li>
+<h4 id="%E6%8A%80%E8%A1%93%E8%A6%81%E7%B4%A0">技術要素</h4>
+<ul>
+<li><a href="#deapthShadow">デプスシャドウ</a></li>
+<li><a href="#bloom">川瀬式ブルーム</a></li>
+<li><a href="#naviMesh">経路探索</a></li>
+</ul>
+</li>
+<li>
+<h4 id="%E3%81%93%E3%81%A0%E3%82%8F%E3%81%A3%E3%81%9F%E8%A6%81%E7%B4%A0">こだわった要素</h4>
+<ul>
+<li><a href="#move">移動について</a></li>
+<li><a href="#attack">攻撃について</a></li>
+<li><a href="#enemy">エネミーの種類</a></li>
+<li><a href="#item">アイテム</a></li>
+<li><a href="#miniMap">ミニマップ</a></li>
+</ul>
+</li>
+</ol>
+<h1 id="a-id--%22overview%22a%E6%A6%82%E8%A6%81"><a id = "overview"></a>概要</h1>
+<h4 id="%E4%BD%9C%E5%93%81%E5%90%8D%E5%B0%8F%E3%81%95%E3%81%AA%E5%AE%88%E8%AD%B7%E8%80%85">作品名：小さな守護者</h4>
+<img src="画像資料/その他/title.png" width = "80%" >
+<h4 id="%E4%BD%BF%E7%94%A8%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3%E5%AD%A6%E5%86%85%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3%E3%82%92%E6%94%B9%E9%80%A0%E3%81%97%E3%81%9F%E7%89%A9">使用エンジン：学内エンジンを改造した物</h4>
+<h4 id="%E4%BD%BF%E7%94%A8%E8%A8%80%E8%AA%9Echlsl">使用言語：C++、HLSL</h4>
+<h4 id="%E4%BD%BF%E7%94%A8%E3%83%84%E3%83%BC%E3%83%ABvisual-studio-2019visual-studio-code3ds-max-2022renderdoc">使用ツール：Visual Studio 2019、Visual Studio Code、3ds Max 2022、RenderDoc</h4>
+<h4 id="%E4%BD%BF%E7%94%A8%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AAeffekseerdirectxtk12">使用ライブラリ：Effekseer、DirectXTK12</h4>
+<h4 id="%E5%8B%95%E4%BD%9C%E7%92%B0%E5%A2%83windows10directx12">動作環境：Windows10、DirectX12</h4>
+<h4 id="%E5%88%B6%E4%BD%9C%E4%BA%BA%E6%95%B0%EF%BC%91%E4%BA%BA">制作人数：１人</h4>
+<h4 id="%E5%88%B6%E4%BD%9C%E6%9C%9F%E9%96%93%EF%BC%95%E3%83%B6%E6%9C%88">制作期間：５ヶ月</h4>
+<h4 id="githuburlhttpsgithubcomtks-2000personalproductiongit">GitHubURL：<a href="https://github.com/tks-2000/PersonalProduction.git">https://github.com/tks-2000/PersonalProduction.git</a></h4>
+<h1 id="a-id--%22operation%22a%E6%93%8D%E4%BD%9C%E8%AA%AC%E6%98%8E"><a id = "operation"></a>操作説明</h1>
+<h4 id="a%E3%83%9C%E3%82%BF%E3%83%B3%E8%BF%91%E6%8E%A5%E6%94%BB%E6%92%83">Aボタン：近接攻撃</h4>
+<h4 id="y%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E4%BD%BF%E7%94%A8">Yボタン：アイテム使用</h4>
+<h4 id="%E5%8D%81%E5%AD%97%E3%83%9C%E3%82%BF%E3%83%B3%E5%B7%A6%E5%8F%B3%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E9%81%B8%E6%8A%9E">十字ボタン左右：アイテム選択</h4>
+<h4 id="r%E3%83%9C%E3%82%BF%E3%83%B3%E9%81%A0%E8%B7%9D%E9%9B%A2%E6%94%BB%E6%92%83">Rボタン：遠距離攻撃</h4>
+<h4 id="l%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%AB%E3%83%A1%E3%83%A9%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88">Lボタン：カメラリセット</h4>
+<h4 id="r%E3%83%88%E3%83%AA%E3%82%AC%E3%83%BC%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5">Rトリガー：ダッシュ</h4>
+<h4 id="r%E3%82%B9%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%82%AB%E3%83%A1%E3%83%A9%E5%9B%9E%E8%BB%A2">Rスティック：カメラ回転</h4>
+<h4 id="l%E3%82%B9%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E7%A7%BB%E5%8B%95">Lスティック：移動</h4>
+<h1 id="a-id--%22sorcecode%22a%E6%8B%85%E5%BD%93%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89"><a id = "sorceCode"></a>担当ソースコード</h1>
+<ul>
+<li>
+<h4 id="%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3%E9%83%A8%E5%88%86%E5%A4%AA%E5%AD%97%E3%81%AF%E6%94%B9%E9%80%A0%E3%81%AE%E3%81%BF">エンジン部分(太字は改造のみ)</h4>
+<ul>
+<li>RenderingEngine.cpp</li>
+<li>RenderingEngine.h</li>
+<li>RenderResource.h</li>
+<li>Lighting.cpp</li>
+<li>Lighting.h</li>
+<li>Shadow.cpp</li>
+<li>Shadow.h</li>
+<li>PostEffect.cpp</li>
+<li>PostEffect.h</li>
+<li>GaussianBlur.cpp</li>
+<li>GaussianBlur.h</li>
+<li>Bloom.cpp</li>
+<li>Bloom.h</li>
+<li>EffectRender.cpp</li>
+<li>EffectRender.h</li>
+<li>FontRender.cpp</li>
+<li>FontRender.h</li>
+<li>SkinModelRender.cpp</li>
+<li>SkinModelRender.h</li>
+<li>SpriteRender.cpp</li>
+<li>SpriteRender.h</li>
+<li>SoundPlayer.cpp</li>
+<li>SoundPlayer.h</li>
+<li>model.fx</li>
+<li>shadowmap.fx</li>
+<li>postEffect.fx</li>
+<li>kawaseBloom.fx</li>
+<li>mapModel.fx</li>
+<li><strong>main.cpp</strong></li>
+<li><strong>Path.cpp</strong></li>
+<li><strong>Path.h</strong></li>
+<li><strong>Material.cpp</strong></li>
+<li><strong>Material.h</strong></li>
+<li><strong>MeshParts.cpp</strong></li>
+<li><strong>MeshParts.h</strong></li>
+<li><strong>Model.cpp</strong></li>
+<li><strong>Model.h</strong></li>
+<li><strong>Shader.cpp</strong></li>
+<li><strong>Shader.h</strong></li>
+<li><strong>Sprite.cpp</strong></li>
+<li><strong>tkEngine.h</strong></li>
+<li><strong>TkmFile.cpp</strong></li>
+<li><strong>TkmFile.h</strong></li>
+</ul>
+</li>
+<li>
+<h4 id="%E3%82%B2%E3%83%BC%E3%83%A0%E9%83%A8%E5%88%86">ゲーム部分</h4>
+<ul>
+<li>Game.cpp</li>
+<li>Game.h</li>
+<li>Title.cpp</li>
+<li>Title.h</li>
+<li>TitleModels.cpp</li>
+<li>TitleModels.cpp</li>
+<li>GameScene.cpp</li>
+<li>GameScene.h</li>
+<li>GameCamera.cpp</li>
+<li>GameCamera.h</li>
+<li>Stage.cpp</li>
+<li>Stage.h</li>
+<li>Timer.cpp</li>
+<li>Timer.h</li>
+<li>DefensiveTarget.cpp</li>
+<li>DefendiveTarget.h</li>
+<li>Player.cpp</li>
+<li>Player.h</li>
+<li>PlayerMove.cpp</li>
+<li>PlayerMove.h</li>
+<li>PlayerRotation.cpp</li>
+<li>PlayerRotation.h</li>
+<li>PlayerAnimation.cpp</li>
+<li>PlayerAnimation.h</li>
+<li>PlayerAttack.cpp</li>
+<li>PlayerAttack.h</li>
+<li>PlayerBullet.cpp</li>
+<li>PlayerBullet.h</li>
+<li>PlayerEffect.cpp</li>
+<li>PlayerEffect.h</li>
+<li>PlayerSound.cpp</li>
+<li>PlayerSound.h</li>
+<li>ItemSlot.cpp</li>
+<li>ItemSlot.h</li>
+<li>Enemy.cpp</li>
+<li>Enemy.h</li>
+<li>EnemyResource.h</li>
+<li>EnemyRouteMove.cpp</li>
+<li>EnemyRouteMove.h</li>
+<li>EnemyRotation.cpp</li>
+<li>EnemyRotation.h</li>
+<li>EnemyAnimation.cpp</li>
+<li>EnemyAnimation.h</li>
+<li>EnemyAttack.cpp</li>
+<li>EnemyAttack.h</li>
+<li>EnemyAttackThePlayer.cpp</li>
+<li>EnemyAttackThePlayer.h</li>
+<li>EnemyEffect.cpp</li>
+<li>EnemyEffect.h</li>
+<li>EnemySound.cpp</li>
+<li>EnemySound.h</li>
+<li>EnemyGenerator.cpp</li>
+<li>EnemyGenerator.h</li>
+<li>Wallker.cpp</li>
+<li>Wallker.h</li>
+<li>Chaser.cpp</li>
+<li>Chaser.h</li>
+<li>Item.cpp</li>
+<li>Item.h</li>
+<li>ItemResource.h</li>
+<li>ItemEffect.cpp</li>
+<li>ItemEffect.h</li>
+<li>ItemSound.cpp</li>
+<li>ItemSound.h</li>
+<li>ItemGenerator.cpp</li>
+<li>ItemGenerator.h</li>
+<li>Bomb.cpp</li>
+<li>Bomb.h</li>
+<li>RepairTools.cpp</li>
+<li>RepairTools.h</li>
+<li>NutritionDrink.cpp</li>
+<li>NutritionDrink.h</li>
+<li>GamaUI.cpp</li>
+<li>GamaUI.h</li>
+<li>MiniMap.cpp</li>
+<li>MiniMap.h</li>
+<li>TimeLimit.cpp</li>
+<li>TimeLimit.h</li>
+<li>BaseEndurance.cpp</li>
+<li>BaseEndurance.h</li>
+<li>RemainingBullets.cpp</li>
+<li>RemainingBullets.h
+<br><br><br><br><br></li>
+</ul>
+</li>
+</ul>
+<h1 id="a-id--%22technicalelements%22a-%E6%8A%80%E8%A1%93%E8%A6%81%E7%B4%A0"><a id = "technicalElements"></a> 技術要素</h1>
+<ul>
+<li>
+<h3 id="a-id--%22deapthshadow%22a-%E3%83%87%E3%83%97%E3%82%B9%E3%82%B7%E3%83%A3%E3%83%89%E3%82%A6"><a id = "deapthShadow"></a> デプスシャドウ</h3>
+<p> 影生成のアルゴリズムはデプスシャドウ法で行っている。影を発生させる光源の位置にライトカメラを置き、光源の方向の先の座標にライトカメラの注視点を設定する。ライトカメラから見たシャドウキャスターとなるモデルを描画することで、シャドウマップを生成する。シャドウマップには、ライトカメラから見たシャドウキャスターの深度値を書き込み、シャドウマップに書き込まれた深度値とライトカメラから見たシャドウレシーバーの深度値を比較して影を落としている。深度値を参照して影を落とすかを判定しているので、シャドウキャスターより手前に影は落ちないようになっている。シャドウキャスター自身が、シャドウレシーバーとしても働き、自身の発生させた影を自身に落とすセルフシャドウも可能にしている。</p>
+<p><br><br><br><br><br>
+<img src="画像資料/シャドウ/depth_sprite_1.png" width = "50%">
+<br>
+ライトカメラから見たシャドウキャスターの深度値が書き込まれたシャドウマップ
+<br><br><br><br><br>
+<img src="画像資料/シャドウ/depth_sprite_2.png" width = "50%">
+<br>
+深度値の差を分かりやすくした画像
+<br><br><br><br><br>
+<img src="画像資料/シャドウ/scene_sprite.png" width = "80%">
+<br>
+シャドウマップを使用して影を落としたゲームシーン
+<br><br><br><br><br></p>
+</li>
+<li>
+<h3 id="a-id--%22bloom%22a%E5%B7%9D%E7%80%AC%E5%BC%8F%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A0"><a id = "bloom"></a>川瀬式ブルーム</h3>
+<p> 強い光を放つ場所から、光があふれる表現を行う為、ポストエフェクトとして、川瀬式ブルームを行っている。ブルームを行う為に、シーンの輝度抽出を行い、シーンの輝度が一定以上の部分のみを書き込んだテクスチャを生成する。生成された輝度抽出テクスチャに、ブラーを複数回かけてぼかす。解像度の違うぼかしたテクスチャを複数生成する。ぼかしたテクスチャ全ての平均をとって最終的なブルーム用のテクスチャを生成し、ブルーム用テクスチャを、シーンに加算合成して、光があふれる表現を実装している。川瀬式のブルーム表現によって、輝度が高くなった場合の光の広がり方が、通常のブルームより自然な表現になっている。ブラーのアルゴリズムはガウシアンブラーを使用している。
+<br><br><br><br><br><br></p>
+<p>
+ <img src="画像資料/ブルーム/bloom_before.png" width = "40%">　　　　　　<img src="画像資料/ブルーム/bloom_Luminance.png" width = "40%">
+</p>
+<p>シーンのテクスチャ　　　　　　　　　　　　　　　　輝度抽出を行ったテクスチャ
+<br><br><br><br><br><br></p>
+<p>
+ <img src="画像資料/ブルーム/bloom_GaussianBlur_1.png" width = "40%">
+ <img src="画像資料/ブルーム/bloom_GaussianBlur_2.png" width = "40%">
+</p>
+<p>
+ <img src="画像資料/ブルーム/bloom_GaussianBlur_3.png" width = "40%">
+ <img src="画像資料/ブルーム/bloom_GaussianBlur_4.png" width = "40%">
+</p>
+輝度抽出テクスチャに複数回ブラーをかけてぼかす
+<br><br><br><br><br><br>
+<img src="画像資料/ブルーム/bloom_After.png" width = "40%">
+<br>
+ブラーをかけたテクスチャの平均を取った画像をシーンに加算合成して完成
+</li>
+<li>
+<h3 id="a-id--%22navimesh%22a%E7%B5%8C%E8%B7%AF%E6%8E%A2%E7%B4%A2"><a id = "naviMesh"></a>経路探索</h3>
+<p> エネミーの動きがステージの障害物によって阻害されないようにするために、経路探索による移動を実装している。3ds Maxで、ステージ内の通れない場所を削除した板ポリゴンを作成し、ナビゲーションメッシュとして出力する。出力されたナビゲーションメッシュを読み込み、ポリゴン情報を元に、Aスターを使った経路探索を行う。経路に使われるポリゴンを、セルと呼ぶ。セル一つに、３頂点・中心座標・隣接セルの情報があり、隣接セルが無い場所は経路に含まれない為、経路をナビゲーションメッシュ上のみに制限できる。探索開始地点に最も近いセルから、探索終了地点までのセルの繋がりを、経路情報として作成する。経路情報によって生成された、セルの中心座標の繋がりを使って進み、中心座標に近づくと次のセルへ進むことを繰り返し、終点まで進むことで、障害物を回避して移動する経路移動の処理を実装している。
+<br><br><br><br><br><br></p>
+ <img src="画像資料/経路探索/stage_model.png" width = "80%">
+ <br>
+ ステージの3Dモデルを真上からみた図
+ <br><br><br><br><br><br>
+ <img src="画像資料/経路探索/naviMesh.png" width = "80%">
+ <br>
+ ステージの通れない所を削除した板ポリゴン
+ <br><br><br><br><br><br>
+</li>
+</ul>
+<h1 id="a-id--%22kodawari%22a%E3%81%93%E3%81%A0%E3%82%8F%E3%81%A3%E3%81%9F%E8%A6%81%E7%B4%A0"><a id = "kodawari"></a>こだわった要素</h1>
+<ul>
+<li>
+<h3 id="a-id--%22move%22a%E7%A7%BB%E5%8B%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><a id = "move"></a>移動について</h3>
+<p> プレイヤーとエネミーの移動には慣性が乗るようになっており滑らかな移動を表現している。急な移動方向の変化が起こっても、いきなり移動方向が切り替わらずに、緩やかに変化するようになっている。</p>
+<p><br><br><br><br><br><br>
+<img src="画像資料/その他/move.png" width = "80%" >
+<br><br><br><br><br><br>
+経路探索による移動だけでは、ナビゲーションメッシュのポリゴン分割量によって、目標の近くまで来たのに遠回りするような挙動を取る場合がある。そこで、目標地点との距離が近くなると経路の移動をやめ、通常の移動処理に切り替えるようにすることで、目標との距離が近いのに遠回りすることが起こりにくくなっている。
+<br><br><br><br><br><br>
+<img src="画像資料/その他/routemove.png" width = "80%" >
+<br><br><br><br><br><br></p>
+</li>
+<li>
+<h3 id="a-id--%22attack%22a%E6%94%BB%E6%92%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><a id = "attack"></a>攻撃について</h3>
+<p> プレイヤーの近接攻撃とエネミーとの当たり判定の付け方は、距離と方向で行っているが、当たり判定のタイミングに一工夫を入れた。攻撃ボタンが押されたときに判定を出すだけでは、攻撃アニメーションの再生開始時にしか当たり判定が出ずに、違和感の大きい動きになってしまう。そこで、攻撃ボタンが押されると攻撃状態に移行し、一定時間後に攻撃状態から復帰する処理にすることで、攻撃アニメーションの再生時間の間攻撃判定を出し続けることができる。しかし、それだけでは、攻撃アニメーション中の、攻撃の予備動作（剣を振りかぶる）や、攻撃の終了後の動作（振りぬいた剣を元に戻す）にも当たり判定が出てしまう。攻撃状態に移行している間に、当たり判定を出す時間を定め、その間だけ当たり判定を取ることで、アニメーションの見た目と攻撃判定を一致させ、違和感を無くしている。また、攻撃モーション中に移動できてしまうと、見た目や判定に違和感が出てしまうので、攻撃状態に移行している間は、移動の入力を制限して、移動を受け付けなくしている。慣性はかかるので、走った勢いを利用して滑りながら攻撃することは可能になっている。<br>
+<img src="画像資料/その他/attack_before.png" width = "80%" >
+<br>
+振りかぶる動作中に当たり判定はない。
+<br><br><br><br><br><br></p>
+</li>
+<li>
+<h3 id="a-id--%22enemy%22a%E3%82%A8%E3%83%8D%E3%83%9F%E3%83%BC%E3%81%AE%E7%A8%AE%E9%A1%9E"><a id = "enemy"></a>エネミーの種類</h3>
+<p> エネミーは防衛対象のみを狙う者とプレイヤーを見つけると狙いをプレイヤーに変える者がいる。防衛対象を狙う者は、一直線に防衛対象に向かい、プレイヤーを無視する。プレイヤーに狙いを変える者は視界にプレイヤーを捉えると、プレイヤーに向けて追跡を開始し、プレイヤーに向けて攻撃してくる。しばらく視界に捉えることが出来ないでいると、プレイヤーに向けての追跡を止め、防衛対象への移動に戻る。プレイヤーを追跡するエネミーを引き付ければ、防衛対象から遠ざけて、まとめて撃破することも可能になる。エネミーの動きを自分でコントロールすることで、楽にクリアすることができるようになっている。
+<br><br><br><br><br><br>
+<img src="画像資料/その他/walker_attack.png" width = "80%" >
+<br>
+防衛対象を攻撃するエネミー
+<br><br><br><br><br><br></p>
+ <img src="画像資料/その他/chaser_attack.png" width = "80%" >
+ <br>
+ プレイヤーに攻撃するエネミー
+ <br><br><br><br><br><br>
+</li>
+<li>
+<h3 id="a-id--%22item%22a%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0"><a id = "item"></a>アイテム</h3>
+<p> エネミーを倒すとアイテムを落とすことがある。アイテムを拾うと、最大３つがアイテムスロットに格納され、いつでも使うことができる。最大まで保持している場合はアイテムを新たに入手することは出来ない。アイテムを選択して使用する事で、種類に応じた効果が発動し、不利な状況でも覆すことができる。同じ種類のアイテムを複数保持できる上に、使用するタイミングは自分で決めれるので、自分で戦略を立てたプレイができる。
+<br><br><br><br><br>
+<img src="画像資料/その他/item_ui.png" width = "40%" >
+<br>
+アイテムスロットに格納されたアイテム。左から、栄養ドリンク、爆弾、修理道具。
+<br><br><br><br><br><br></p>
+</li>
+<li>
+<h3 id="a-id--%22minimap%22a%E3%83%9F%E3%83%8B%E3%83%9E%E3%83%83%E3%83%97"><a id = "miniMap"></a>ミニマップ</h3>
+<p> エネミーは様々な方向から出現し、防衛対象目掛けて移動してくる。ステージには壁が多く、画面に映る範囲の情報だけでは、迫り来るエネミーの軍団に対応することは難しい。そこで、プレイヤーを中心とした一定範囲をミニマップとして表示し、画面に映っていないエネミーの位置も把握出来るようになっている。ミニマップは、別のカメラから見た映像を表示している。プレイヤーの真上から見下ろすマップカメラを用意し、ミニマップは３ｄのワールドでも２ｄ的な位置を求めるので、ミニマップを描画するカメラは平行投影で描画を行う。ゲームシーンとは別のレンダーターゲットに、マップカメラから映る様子を描画し、レンダーターゲットのテクスチャを、画像として表示している。ただゲームシーンを映すだけでは、ミニマップには必要のないポストエフェクトの効果なども反映されてしまう。正確な位置が分かれば、余計な情報はいらないので、画面をそのまま表示するのではなく、ミニマップに表示したい物の代わりとなるマップ用の別モデルを表示する方式にした。シンプルなマップ用の３ｄモデルを、余計な計算を行わないシェーダーファイルで、表示したい物と同じ位置に表示することで、処理を軽減しつつ、分かりやすいマップ表示を実現している。
+<br><br><br><br><br>
+<img src="画像資料/その他/scene_noMap.png" width = "60%" >　　　　<img src="画像資料/その他/mini_map.png" width = "20%" >
+<br>
+ミニマップに周囲の位置関係が表示される
+<br><br><br><br><br><br></p>
+</li>
+</ul>
+
+</body>
+</html>
